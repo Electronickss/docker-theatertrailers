@@ -11,6 +11,7 @@ RUN apk add --update \
 WORKDIR /opt/
 RUN git clone https://github.com/Electronickss/TheaterTrailers
 RUN mkdir /opt/TheaterTrailers/Logs
+RUN mkdir /opt/TheaterTrailers/Configs
 RUN mkdir /opt/TheaterTrailers/Trailers
 RUN mkdir /opt/TheaterTrailers/Cache
 
