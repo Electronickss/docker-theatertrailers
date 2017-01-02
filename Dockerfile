@@ -8,18 +8,16 @@ RUN apk add --update \
   && pip install tmdbsimple \
   && rm -rf /var/cache/apk/* \
 
-RUN mkdir /opt/
-RUN mkdir /opt/TheaterTrailers
-WORKDIR /opt/
+WORKDIR /
 RUN git clone https://github.com/Electronickss/TheaterTrailers
-RUN mkdir /opt/TheaterTrailers/Logs
-RUN mkdir /opt/TheaterTrailers/Configs
-RUN mkdir /opt/TheaterTrailers/Trailers
-RUN mkdir /opt/TheaterTrailers/Cache
+RUN mkdir /TheaterTrailers/Logs
+RUN mkdir /TheaterTrailers/Configs
+RUN mkdir /TheaterTrailers/Trailers
+RUN mkdir /TheaterTrailers/Cache
 
-VOLUME ["/opt/TheaterTrailers/Trailers/"]
-VOLUME ["/opt/TheaterTrailers/Logs/"
-VOLUME ["/opt/TheaterTrailers/Configs/"]
-VOLUME ["/opt/TheaterTrailers/Cache/"]
+VOLUME ["/TheaterTrailers/Trailers/"]
+VOLUME ["/TheaterTrailers/Logs/"
+VOLUME ["/TheaterTrailers/Configs/"]
+VOLUME ["/TheaterTrailers/Cache/"]
 
 echo "00 */6 * * * /opt/TheaterTrailers/theaterTrailers.py 2 >> /opt/TheaterTrailers/Logs/theaterTrailers.cron.log" >> mycron && crontab mycron && rm mycron
