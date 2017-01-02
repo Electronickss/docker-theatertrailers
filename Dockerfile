@@ -8,8 +8,9 @@ RUN apk add --update \
   && pip install tmdbsimple \
   && rm -rf /var/cache/apk/* \
 
-WORKDIR /opt/
+RUN mkdir /opt/
 RUN mkdir /opt/TheaterTrailers
+WORKDIR /opt/
 RUN git clone https://github.com/Electronickss/TheaterTrailers
 RUN mkdir /opt/TheaterTrailers/Logs
 RUN mkdir /opt/TheaterTrailers/Configs
