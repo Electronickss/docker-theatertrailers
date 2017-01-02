@@ -9,6 +9,7 @@ RUN apk add --update \
   && rm -rf /var/cache/apk/* \
 
 WORKDIR /opt/
+RUN mkdir /opt/TheaterTrailers
 RUN git clone https://github.com/Electronickss/TheaterTrailers
 RUN mkdir /opt/TheaterTrailers/Logs
 RUN mkdir /opt/TheaterTrailers/Configs
