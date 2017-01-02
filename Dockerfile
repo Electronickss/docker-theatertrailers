@@ -5,9 +5,8 @@ RUN apk add --update \
     py-pip \
     git \
   && pip install --upgrade youtube_dl \
-  && pip install tmdbsimple \
-  && rm -rf /var/cache/apk/* \
-
+  && pip install tmdbsimple 
+  
 WORKDIR /
 RUN git clone https://github.com/Electronickss/TheaterTrailers
 RUN mkdir /TheaterTrailers/Logs
