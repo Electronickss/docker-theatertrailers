@@ -19,4 +19,5 @@ VOLUME ["/TheaterTrailers/Logs/"
 VOLUME ["/TheaterTrailers/Configs/"]
 VOLUME ["/TheaterTrailers/Cache/"]
 
-echo "00 */6 * * * /opt/TheaterTrailers/theaterTrailers.py 2 >> /opt/TheaterTrailers/Logs/theaterTrailers.cron.log" >> mycron && crontab mycron && rm mycron
+WORKDIR /TheaterTrailers/
+RUN echo "00 */6 * * * /opt/TheaterTrailers/theaterTrailers.py 2 >> /TheaterTrailers/Logs/theaterTrailers.cron.log" >> mycron && crontab mycron && rm mycron
